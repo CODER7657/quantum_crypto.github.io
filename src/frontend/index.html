@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuantumChat - Post-Quantum Secure Messaging</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- CSP: Allow scripts and WebSocket, block eval/unsafe-eval -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; connect-src 'self' ws: wss:; style-src 'self'; object-src 'none';">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔐 QuantumChat</h1>
+            <p>Secure messaging protected against quantum computers</p>
+            <div class="status" id="connectionStatus">Connecting...</div>
+        </header>
+
+        <div class="chat-container">
+            <div class="encryption-info">
+                <h3>🛡️ Security Status</h3>
+                <div class="security-details">
+                    <div class="security-item">
+                        <span class="label">Encryption:</span>
+                        <span class="value" id="encryptionType">Post-Quantum (Kyber)</span>
+                    </div>
+                    <div class="security-item">
+                        <span class="label">Key Status:</span>
+                        <span class="value" id="keyStatus">Generating...</span>
+                    </div>
+                    <div class="security-item">
+                        <span class="label">Quantum Safe:</span>
+                        <span class="value quantum-safe">✅ Yes</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="messages" id="messagesContainer">
+                <div class="system-message">
+                    Welcome to QuantumChat! Your messages are protected with post-quantum cryptography.
+                </div>
+            </div>
+
+            <div class="input-area">
+                <input type="text" id="messageInput" placeholder="Type your quantum-safe message..." disabled>
+                <button id="sendButton" disabled>Send 🚀</button>
+            </div>
+        </div>
+
+        <div class="info-panel">
+            <h3>🧬 How It Works</h3>
+            <ul>
+                <li><strong>Kyber Algorithm:</strong> Uses lattice-based cryptography</li>
+                <li><strong>Quantum Resistant:</strong> Safe from Shor's algorithm</li>
+                <li><strong>Key Exchange:</strong> Secure key generation and sharing</li>
+                <li><strong>Real-time:</strong> Instant encrypted messaging</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="polyfill.js"></script>
+    <script src="browser-check.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
